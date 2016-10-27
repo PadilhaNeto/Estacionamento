@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+
+<AnchorPane id="AnchorPane" fx:id="paneCliente" prefHeight="464.0" prefWidth="818.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VIEW.MovimentoController">
+    <stylesheets>
+        <URL value="@/styles/cliente.css" />
+    </stylesheets>
+    <children>
+        <VBox layoutX="182.0" layoutY="127.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="36.0" prefWidth="600.0" style="-fx-background-color: #2F4F4F;">
+                    <children>
+                  <MaterialDesignIconView fill="WHITE" glyphName="PLUS_CIRCLE" size="10">
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                  </MaterialDesignIconView>
+                        <MaterialDesignIconView fx:id="btnIncluir" fill="WHITE" glyphName="ELEVATOR" onMouseClicked="#acIncluir" size="20">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </MaterialDesignIconView>
+                  <JFXButton onAction="#acIncluir" text="Inserir Movimento" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                        <MaterialDesignIconView fx:id="btnAlterar" fill="WHITE" glyphName="MESSAGE_DRAW" onMouseClicked="#acAlterar" size="20" />
+                  <JFXButton fx:id="btnOutMov" onAction="#acAlterar" text="Inserir Saida" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                        <MaterialDesignIconView fx:id="btnExcluir" fill="WHITE" glyphName="DELETE" onMouseClicked="#acExcluir" size="20">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </MaterialDesignIconView>
+                  <JFXButton fx:id="btnExMov" onAction="#acExcluir" text="Excluir Registro" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="372.0" prefWidth="727.0">
+                    <children>
+                        <TabPane prefHeight="371.0" prefWidth="819.0" tabClosingPolicy="UNAVAILABLE">
+                            <tabs>
+                                <Tab style="-fx-background-color: white;" text="Fluxo Do estacionamento">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <TableView fx:id="tblViewMovimento" layoutX="229.0" layoutY="84.0" prefHeight="315.0" prefWidth="819.0" style="-fx-background-color: #2b6060;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columns>
+                                                        <TableColumn prefWidth="84.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center;" text="Codigo">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="codMovimento" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        <TableColumn id="entrada" prefWidth="112.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center;" text="Hora Entrada">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="formatHoraEntrada" />
+                                                            </cellValueFactory>                 
+                                                        </TableColumn>
+                  
+                                                        <TableColumn id="veiculo" prefWidth="93.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center;" text="Veiculo">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="veiculo" />
+                                                            </cellValueFactory>                 
+                                                        </TableColumn>
+                                                        <TableColumn id="vaga" prefWidth="96.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center;" text="Vaga">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="vaga" />
+                                                            </cellValueFactory>                 
+                                                        </TableColumn>
+                                                        <TableColumn minWidth="0.0" prefWidth="166.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center;" text="Hora Saida">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="formatHoraSaida" />
+                                                            </cellValueFactory>                 
+                                                        </TableColumn>
+                                                        <TableColumn prefWidth="262.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center;" text="Obs.">
+                                                            <cellValueFactory>
+                                                                <PropertyValueFactory property="observacao" />
+                                                            </cellValueFactory>
+                                                        </TableColumn>
+                                                        
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="727.0">
+                    <children>
+                        <JFXButton onAction="#btnInicioClick" style="-fx-border-color: #2F4F4F;" text="Inicio" textFill="DARKSLATEGRAY">
+                            <font>
+                                <Font name="Arial Black" size="13.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <graphic>
+                                <MaterialDesignIconView fill="DARKSLATEGRAY" glyphName="HOME" size="15" />
+                            </graphic>
+                        </JFXButton>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

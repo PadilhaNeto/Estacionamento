@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="144.0" prefWidth="500.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VIEW.CRUDVeiculoController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+   <children>
+      <VBox spacing="8.0" style="-fx-background-color: #2F4F4F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="490.0" style="-fx-background-color: #2F4F4F;">
+               <children>
+                  <VBox prefHeight="51.0" prefWidth="133.0" spacing="5.0">
+                     <children>
+                        <Label text="Placa" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="8.0" />
+                           </VBox.margin></Label>
+                        <JFXTextField fx:id="txtFldPlaca" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="46.0" prefWidth="141.0">
+                     <children>
+                        <Label text="Marca" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXTextField fx:id="txtFldMarca" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="116.0">
+                     <children>
+                        <Label text="Modelo" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="8.0" />
+                           </VBox.margin></Label>
+                        <JFXTextField fx:id="txtFldModelo" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="68.0" prefWidth="490.0" spacing="8.0" style="-fx-background-color: #2F4F4F;">
+               <children>
+                  <VBox prefHeight="46.0" prefWidth="101.0">
+                     <children>
+                        <Label text="Cor" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="8.0" />
+                           </VBox.margin></Label>
+                        <JFXTextField fx:id="txtFldCor" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="46.0" prefWidth="361.0">
+                     <children>
+                        <Label text="Observacao" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXTextField fx:id="txtFldObservacao" focusColor="DARKSLATEGRAY" maxWidth="372.0" minWidth="90.0" prefHeight="31.0" prefWidth="372.0" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                     </children>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            
+                  
+             <VBox fx:id="boxDisciplinas" prefHeight="100.0" />
+            <HBox alignment="BOTTOM_CENTER" spacing="5.0" style="-fx-background-color: WHITE;">
+               <children>
+                  <JFXButton fx:id="btnCodastrar" onAction="#btnCadastraClick" style="-fx-border-color: #2F4F4F;" text="Confirmar" textFill="DARKSLATEGRAY">
+                     <graphic>
+                        <MaterialDesignIconView fill="DARKSLATEGRAY" glyphName="CHECKBOX_MARKED_CIRCLE" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCancela" onAction="#btnCancelaClick" style="-fx-border-color: #2F4F4F;" text="Cancelar">
+                     <graphic>
+                        <MaterialDesignIconView fill="DARKSLATEGRAY" glyphName="CLOSE_CIRCLE" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </HBox>
+            
+            
+            
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="156.0" prefWidth="485.0" style="-fx-background-color: #2F4F4F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VIEW.CRUDMovimentoController">
+   <children>
+      <VBox spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <VBox prefHeight="55.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Hora Entrada" textFill="WHITE" />
+                        <JFXTextField fx:id="txtFldHoraEntrada" disable="true" editable="false" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY">
+                           <VBox.margin>
+                              <Insets top="6.0" />
+                           </VBox.margin></JFXTextField>
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="47.0" prefWidth="187.0" spacing="5.0">
+                     <children>
+                        <Label text="Hora Saida" textFill="WHITE" />
+                        <JFXTextField fx:id="txtFldHoraSaida" disable="true" editable="false" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox spacing="5.0" />
+                  <VBox layoutX="104.0" layoutY="10.0" prefHeight="47.0" prefWidth="174.0" spacing="5.0">
+                     <children>
+                        <Label text="Observação" textFill="WHITE" />
+                        <JFXTextField fx:id="txtFldObs" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Veiculo" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin></Label>
+                  <JFXComboBox fx:id="cmbVeiculo" prefHeight="25.0" prefWidth="169.0" style="-fx-background-color: #dddddd;" />
+                  <Label text="Vaga" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <JFXComboBox fx:id="cmbVaga" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #dddddd;" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" spacing="5.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXButton onAction="#btnConfirmaClick" style="-fx-border-color: #2F4F4F;" text="Confirma" textFill="DARKSLATEGRAY">
+                     <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <MaterialDesignIconView fill="DARKSLATEGRAY" glyphName="CHECKBOX_MARKED_CIRCLE" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton onAction="#btnCancelaClick" style="-fx-border-color: #2F4F4F;" text="Cancelar" textFill="DARKSLATEGRAY">
+                     <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <MaterialDesignIconView fill="DARKSLATEGRAY" glyphName="CLOSE_CIRCLE" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

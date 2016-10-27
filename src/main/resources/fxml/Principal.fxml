@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="417.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VIEW.PrincipalController">
+   <children>
+      <StackPane fx:id="pane" layoutY="54.0" prefHeight="260.0" prefWidth="451.0" />
+      <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="900.0" style="-fx-background-color: #2F4F4F;">
+         <children>
+            <MaterialDesignIconView fill="WHITE" glyphName="SWAP_VERTICAL" size="35">
+               <HBox.margin>
+                  <Insets left="10.0" right="160.0" />
+               </HBox.margin>
+            </MaterialDesignIconView>
+            <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT" size="18" />
+            <JFXButton onAction="#btnClienteClick" text="Clientes" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <MaterialDesignIconView fill="WHITE" glyphName="IMAGE_FILTER_CENTER_FOCUS" size="18" />
+            <JFXButton onAction="#btnVagaClick" text="Vagas" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <MaterialDesignIconView fill="WHITE" glyphName="CAR" size="18" />
+            <JFXButton onAction="#btnVeiculoClick" text="Veiculos" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <MaterialDesignIconView fill="WHITE" glyphName="ELEVATOR" size="18" />
+            <JFXButton onAction="#btnMovimentoClick" text="Movimento" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin></JFXButton>
+            <JFXButton onAction="#btnSairClick" prefHeight="22.0" prefWidth="70.0" style="-fx-border-color: white;" text="Sair" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="WALK" size="12" />
+               </graphic>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </JFXButton>
+            <JFXSpinner fx:id="spnLoad" visible="false">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </JFXSpinner>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
