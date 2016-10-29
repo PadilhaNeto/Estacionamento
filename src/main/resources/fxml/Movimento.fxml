@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
@@ -58,9 +59,9 @@
                                     <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                             <children>
-                                                <TableView fx:id="tblViewMovimento" layoutX="229.0" layoutY="84.0" prefHeight="315.0" prefWidth="819.0" style="-fx-background-color: #2b6060;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <TableView fx:id="tblViewMovimento" layoutX="11.0" layoutY="11.0" prefHeight="304.0" prefWidth="799.0" style="-fx-background-color: #2b6060;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="11.0">
                                                     <columns>
-                                                        <TableColumn prefWidth="84.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center;" text="Codigo">
+                                                        <TableColumn prefWidth="84.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center; -fx-font-weight: bold;" text="Codigo">
                                                             <cellValueFactory>
                                                                 <PropertyValueFactory property="codMovimento" />
                                                             </cellValueFactory>
@@ -86,9 +87,9 @@
                                                                 <PropertyValueFactory property="formatHoraSaida" />
                                                             </cellValueFactory>                 
                                                         </TableColumn>
-                                                        <TableColumn prefWidth="262.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center;" text="Obs.">
+                                                        <TableColumn prefWidth="245.0" style="-fx-border-color: #2f4f4f; -fx-text-fill: #2f4f4f; -fx-alignment: center;" text="Valor a Pagar">
                                                             <cellValueFactory>
-                                                                <PropertyValueFactory property="observacao" />
+                                                                <PropertyValueFactory property="valorFormatado" />
                                                             </cellValueFactory>
                                                         </TableColumn>
                                                         
@@ -99,21 +100,27 @@
                                     </content>
                                 </Tab>
                             </tabs>
+                     <effect>
+                        <DropShadow height="14.17" radius="7.532500000000001" spread="0.04" width="17.96" />
+                     </effect>
                         </TabPane>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="727.0">
                     <children>
-                        <JFXButton onAction="#btnInicioClick" style="-fx-border-color: #2F4F4F;" text="Inicio" textFill="DARKSLATEGRAY">
+                        <JFXButton onAction="#btnInicioClick" style="-fx-border-color: #2F4F4F; -fx-background-color: white;" text="Inicio" textFill="DARKSLATEGRAY">
                             <font>
                                 <Font name="Arial Black" size="13.0" />
                             </font>
                             <HBox.margin>
-                                <Insets left="10.0" />
+                                <Insets left="15.0" />
                             </HBox.margin>
                             <graphic>
                                 <MaterialDesignIconView fill="DARKSLATEGRAY" glyphName="HOME" size="15" />
                             </graphic>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                         </JFXButton>
                     </children>
                 </HBox>

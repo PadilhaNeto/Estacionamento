@@ -103,65 +103,7 @@ public class MovimentoController implements Initializable {
         showCRUD();
 
     }
-    public void calculaValor(){
-        Preco preco;
-          double hora = (int) precoRepository.findByHora("hora"), horaAdicional = 3.00, meiaHra = 2.00, valor = 0.00;
-        SimpleDateFormat formatHora = new SimpleDateFormat("HH");
-
-        Date horaEntrada = new Date();
-        horaEntrada.getTime();
-        // System.out.println(formatHora.format(horaEntrada));
-
-        SimpleDateFormat formatMin = new SimpleDateFormat("mm");
-
-        Date minEntrada = new Date();
-        minEntrada.getTime();
-         //System.out.println("Minutos da entrada [ "+formatMin.format(minEntrada));
-
-        String horaSaida = "13";
-        String minSaida = "50";
-
-        int horaFinal = Integer.parseInt(horaSaida) - Integer.parseInt(formatHora.format(horaEntrada));
-        int aux = horaFinal;
-        System.out.println("diferença de horas  [ " + horaFinal);
-
-        int minFinal = Integer.parseInt(minSaida) - Integer.parseInt(formatMin.format(minEntrada));
-        System.out.println(" diferença de minutos [ " + minFinal);
-        if (minFinal < 0) {
-            double hra = minFinal + 60;
-            System.out.println("minutos para calculo [ " + hra);
-             if(hra <= 30){
-                 valor = 2.00;
-             }
-             else {
-                 valor = 4.00 * aux;
-             }
-             System.out.println(valor);
-            
-        }
-        else{
-            horaFinal = horaFinal*60;
-            System.out.println(horaFinal);
-            double hraTotal = horaFinal + minFinal;
-            System.out.println(hraTotal);
-            if(hraTotal <= 30){
-                 valor = 2.00;
-             }
-             else if (horaFinal > 1){
-                 valor = 4.00 + 3.00 * (aux -1);
-             }
-             System.out.println(valor);
-            
-            
-        }
-        
-        
-        
-        
-        
-        
-        
-    }
+   
 
     @FXML
     public void btnInicioClick() throws IOException {
@@ -206,9 +148,7 @@ public class MovimentoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Preco preco;
-          double hora = (int) precoRepository.findByHora("hora");
-          System.out.println(hora);
+       
         tblViewMovimento.setItems(FXCollections.observableList(movimentoRepository.findAll()));
 
         btnAlterar.visibleProperty().bind(

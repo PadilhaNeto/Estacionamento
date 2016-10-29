@@ -1,5 +1,6 @@
 VIEW/VeiculoController.class
 repository/PrecoRepository.class
+VIEW/LoginController.class
 config/DBConfig.class
 VIEW/CRUDVeiculoController.class
 repository/MovimentoRepository.class

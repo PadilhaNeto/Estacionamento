@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import com.jfoenix.controls.*?>
 <?import de.jensd.fx.glyphs.materialdesignicons.*?>
 <?import de.jensd.fx.glyphs.fontawesome.*?>
@@ -23,11 +24,13 @@
                <children>
                   <VBox prefHeight="51.0" prefWidth="133.0" spacing="5.0">
                      <children>
-                        <Label text="Placa" textFill="WHITE">
+                        <JFXTextField fx:id="txtFldPlaca" focusColor="WHITE" labelFloat="true" promptText="Placa" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY">
                            <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin></Label>
-                        <JFXTextField fx:id="txtFldPlaca" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect></JFXTextField>
                      </children>
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
@@ -35,12 +38,13 @@
                   </VBox>
                   <VBox prefHeight="46.0" prefWidth="141.0">
                      <children>
-                        <Label text="Marca" textFill="WHITE">
+                        <JFXTextField fx:id="txtFldMarca" focusColor="WHITE" labelFloat="true" promptText="Marca" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY">
                            <VBox.margin>
-                              <Insets left="8.0" />
+                              <Insets top="5.0" />
                            </VBox.margin>
-                        </Label>
-                        <JFXTextField fx:id="txtFldMarca" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                           <effect>
+                              <DropShadow />
+                           </effect></JFXTextField>
                      </children>
                      <HBox.margin>
                         <Insets top="5.0" />
@@ -48,27 +52,31 @@
                   </VBox>
                   <VBox prefHeight="100.0" prefWidth="116.0">
                      <children>
-                        <Label text="Modelo" textFill="WHITE">
+                        <JFXTextField fx:id="txtFldModelo" focusColor="WHITE" labelFloat="true" promptText="Modelo" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY">
                            <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin></Label>
-                        <JFXTextField fx:id="txtFldModelo" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect></JFXTextField>
                      </children>
                      <HBox.margin>
                         <Insets left="5.0" top="5.0" />
                      </HBox.margin>
                   </VBox>
                </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
             </HBox>
             <HBox prefHeight="68.0" prefWidth="490.0" spacing="8.0" style="-fx-background-color: #2F4F4F;">
                <children>
                   <VBox prefHeight="46.0" prefWidth="101.0">
                      <children>
-                        <Label text="Cor" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin></Label>
-                        <JFXTextField fx:id="txtFldCor" focusColor="DARKSLATEGRAY" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                        <JFXTextField fx:id="txtFldCor" focusColor="DARKSLATEGRAY" labelFloat="true" promptText="Cor" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY">
+                           <effect>
+                              <DropShadow />
+                           </effect></JFXTextField>
                      </children>
                      <HBox.margin>
                         <Insets left="10.0" />
@@ -76,18 +84,19 @@
                   </VBox>
                   <VBox prefHeight="46.0" prefWidth="361.0">
                      <children>
-                        <Label text="Observacao" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Label>
-                        <JFXTextField fx:id="txtFldObservacao" focusColor="DARKSLATEGRAY" maxWidth="372.0" minWidth="90.0" prefHeight="31.0" prefWidth="372.0" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY" />
+                        <JFXTextField fx:id="txtFldObservacao" focusColor="WHITE" labelFloat="true" maxWidth="372.0" minWidth="90.0" prefHeight="31.0" prefWidth="372.0" promptText="Observação" style="-fx-background-color: #dddddd;" unFocusColor="DARKSLATEGRAY">
+                           <effect>
+                              <DropShadow />
+                           </effect></JFXTextField>
                      </children>
                      <HBox.margin>
                         <Insets right="5.0" />
                      </HBox.margin>
                   </VBox>
                </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
             </HBox>
             
                   

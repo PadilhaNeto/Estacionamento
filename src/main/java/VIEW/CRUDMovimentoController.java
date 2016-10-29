@@ -38,7 +38,6 @@ public class CRUDMovimentoController implements Initializable {
 
     private MovimentoController controllerMain;
 
-   
     @FXML
     private JFXTextField txtFldHoraSaida;
     @FXML
@@ -73,17 +72,16 @@ public class CRUDMovimentoController implements Initializable {
 
         System.out.println(sdf.format(hora));
 
-        
-        if(controllerMain.acao==INCLUIR){
-           controllerMain.movimento.setCodMovimento((int) (movimentoRepository.count() + 1));
-           controllerMain.movimento.setHoraEntrada(hora);  
-           
-        }       
+        if (controllerMain.acao == INCLUIR) {
+            controllerMain.movimento.setCodMovimento((int) (movimentoRepository.count() + 1));
+            controllerMain.movimento.setHoraEntrada(hora);
+
+        }
 
         controllerMain.movimento.setVaga((Vaga) cmbVaga.getSelectionModel().getSelectedItem());
-        controllerMain.movimento.setVeiculo((Veiculo) cmbVeiculo.getSelectionModel().getSelectedItem());
-        // controllerMain.movimento.setHoraSaida(now());
+        controllerMain.movimento.setVeiculo((Veiculo) cmbVeiculo.getSelectionModel().getSelectedItem());        
         controllerMain.movimento.setObservacao(txtFldObs.getText());
+        
 
         try {
             switch (controllerMain.acao) {
@@ -129,22 +127,30 @@ public class CRUDMovimentoController implements Initializable {
         cmbVeiculo.setItems(
                 FXCollections.observableList(veiculoRepository.findAll()));
         cmbVaga.setItems(
-                FXCollections.observableList(vagaRepository.findByStatus("Livre")));
+                FXCollections.observableList(vagaRepository.findByStatusLikeIgnoreCase("Livre")));
+
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+
+        Date hora = new Date();
+        hora.getTime();
+
+        txtFldHoraEntrada.setText(sdf.format(hora));
+
         txtFldHoraSaida.setDisable(true);
 
     }
 
     void setCadastroController(MovimentoController controllerMain) {
         this.controllerMain = controllerMain;
-       
+
         if (controllerMain.acao == ALTERAR) {
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
             Date hora = new Date();
             hora.getTime();
-            
+
             txtFldHoraSaida.setText(sdf.format(hora));
-             txtFldHoraEntrada.setText(controllerMain.movimento.getFormatHoraEntrada());
-             txtFldHoraEntrada.setDisable(true);
+            txtFldHoraEntrada.setText(controllerMain.movimento.getFormatHoraEntrada());
+            txtFldHoraEntrada.setDisable(true);
             controllerMain.movimento.setHoraSaida(hora);
         }
         txtFldObs.setText(controllerMain.movimento.getObservacao());
@@ -153,14 +159,70 @@ public class CRUDMovimentoController implements Initializable {
             cmbVeiculo.getSelectionModel().select(controllerMain.movimento.getVeiculo());
             cmbVaga.getSelectionModel().select(controllerMain.movimento.getVaga());
         }
-        if (controllerMain.acao == EXCLUIR){
+        if (controllerMain.acao == EXCLUIR) {
             txtFldHoraEntrada.setText(controllerMain.movimento.getFormatHoraEntrada());
             txtFldHoraSaida.setText(controllerMain.movimento.getFormatHoraSaida());
         }
 
+        if (controllerMain.acao == ALTERAR) {
+
+            double hora = 4.00, horaAdicional = 3.00, meiaHra = 2.00, valor = 0.00;
+            SimpleDateFormat formatHora = new SimpleDateFormat("HH");
+            String hraEntrada = formatHora.format(controllerMain.movimento.getHoraEntrada());
+
+            SimpleDateFormat formatMin = new SimpleDateFormat("mm");
+
+            String minEntrada = formatMin.format(controllerMain.movimento.getHoraEntrada());
+
+            System.out.println("Minutos da entrada [ " + minEntrada);
+            System.out.println("Hora da entrada [ " + hraEntrada);
+
+            String horaSaida = formatHora.format(new Date());
+            String minSaida = formatMin.format(new Date());
+
+            int horaFinal = Integer.parseInt(horaSaida) - Integer.parseInt(hraEntrada);
+            int aux = horaFinal;
+            System.out.println("diferença de horas  [ " + horaFinal);
+
+            int minFinal = Integer.parseInt(minSaida) - Integer.parseInt(minEntrada);
+            System.out.println(" diferença de minutos [ " + minFinal);
+            if (minFinal < 0) {
+                double hra = minFinal + 60;
+                System.out.println("minutos para calculo [ " + hra);
+                if (hra <= 30) {
+                    valor = meiaHra;
+                    controllerMain.movimento.setValor(valor);
+                } else {
+                    valor = hora * aux;
+                    controllerMain.movimento.setValor(valor);
+                }
+                System.out.println("Valor a pagar " + valor);
+
+            } else {
+
+                horaFinal = horaFinal * 60;
+                System.out.println(horaFinal);
+                double hraTotal = horaFinal + minFinal;
+                System.out.println(hraTotal);
+                if (hraTotal <= 30) {
+                    valor = meiaHra;
+                    controllerMain.movimento.setValor(valor);
+                } else if (hraTotal > 30 && hraTotal <= 1) {
+                    valor = hora;
+                    controllerMain.movimento.setValor(valor);
+                } else if (horaFinal > 1) {
+                    valor = hora + horaAdicional * (aux - 1);
+                    controllerMain.movimento.setValor(valor);
+                }
+                System.out.println("Valor com Adicional   " + valor);
+
+            }
+
+        }
+
         txtFldHoraEntrada.setDisable(controllerMain.acao == INCLUIR);
         txtFldHoraSaida.setDisable(controllerMain.acao == INCLUIR);
-          
+
         txtFldHoraEntrada.setDisable(controllerMain.acao == EXCLUIR);
         txtFldHoraSaida.setDisable(controllerMain.acao == EXCLUIR);
         txtFldObs.setDisable(controllerMain.acao == EXCLUIR);

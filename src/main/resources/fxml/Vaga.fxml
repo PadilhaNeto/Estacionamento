@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
@@ -56,36 +57,39 @@
                                     <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                             <children>
-                                                <TableView fx:id="tblViewVaga" layoutX="229.0" layoutY="84.0" prefHeight="277.0" prefWidth="600.0" style="-fx-background-color: #2b6060;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <TableView fx:id="tblViewVaga" layoutX="10.0" layoutY="6.0" prefHeight="327.0" prefWidth="708.0" style="-fx-background-color: #2b6060;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="6.0">
                                                     <columns>
-                                                        <TableColumn prefWidth="120.0" text="Numero">
+                                                        <TableColumn prefWidth="120.0" style="-fx-text-fill: #2f4f4f; -fx-border-color: #2f4f4f; -fx-alignment: center; -fx-font-weight: bold;" text="Numero">
                                                             <cellValueFactory>
                                                                 <PropertyValueFactory property="nrVaga" />
                                                             </cellValueFactory>
                                                         </TableColumn>
-                                                        <TableColumn prefWidth="167.0" text="Status">
+                                                        <TableColumn prefWidth="167.0" style="-fx-text-fill: #2f4f4f; -fx-border-color: #2f4f4f; -fx-alignment: center;" text="Status">
                                                             <cellValueFactory>
                                                                 <PropertyValueFactory property="status" />
                                                             </cellValueFactory>                 
                                                         </TableColumn>
                   
-                                                                    <TableColumn prefWidth="153.0" text="Tipo">
+                                                                    <TableColumn prefWidth="153.0" style="-fx-text-fill: #2f4f4f; -fx-border-color: #2f4f4f; -fx-alignment: center;" text="Tipo">
                                                             <cellValueFactory>
                                                                 <PropertyValueFactory property="tipoVaga" />
                                                             </cellValueFactory>                 
                                                         </TableColumn>
-                                                        <TableColumn prefWidth="98.0" text="Tamanho">
+                                                        <TableColumn prefWidth="98.0" style="-fx-text-fill: #2f4f4f; -fx-border-color: #2f4f4f; -fx-alignment: center;" text="Tamanho">
                                                             <cellValueFactory>
                                                                 <PropertyValueFactory property="tamanho" />
                                                             </cellValueFactory>                 
                                                         </TableColumn>
-                                                        <TableColumn prefWidth="180.0" text="Observacao">
+                                                        <TableColumn prefWidth="161.0" style="-fx-text-fill: #2f4f4f; -fx-border-color: #2f4f4f; -fx-alignment: center;" text="Observacao">
                                                             <cellValueFactory>
                                                                 <PropertyValueFactory property="observacao" />
                                                             </cellValueFactory>                 
                                                         </TableColumn>
                                                         
                                                                 </columns>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
                                                 </TableView>
                                             </children>
                                         </AnchorPane>

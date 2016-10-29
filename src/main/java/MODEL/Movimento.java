@@ -6,6 +6,7 @@
 package MODEL;
 
 import static config.Config.df;
+import static config.Config.nfc;
 import java.text.SimpleDateFormat;
 
 import java.util.Date;
@@ -21,7 +22,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author User
  */
-
 @Document
 public class Movimento {
 
@@ -30,17 +30,18 @@ public class Movimento {
 
     @Indexed(unique = true)
     private Date horaEntrada;
+    @Indexed(unique = true)
     private int codMovimento;
 
     private Date horaSaida;
-     @DBRef   //relaciona com a outra tabela
+    @DBRef   //relaciona com a outra tabela
     private Veiculo veiculo;
-     @DBRef
+    @DBRef
     private Vaga vaga;
-       @DBRef
-    private Preco preco;
-       
-     private String observacao;
+
+    private double valor;
+
+    private String observacao;
 
     public Movimento() {
     }
@@ -52,18 +53,20 @@ public class Movimento {
     public void setCodMovimento(int codMovimento) {
         this.codMovimento = codMovimento;
     }
-    public Movimento(int codMovimento,Date horaEntrada, Date horaSaida, Veiculo veiculo, Vaga vaga) {
+
+    public Movimento(int codMovimento, Date horaEntrada, Date horaSaida, Veiculo veiculo, Vaga vaga) {
         this.horaEntrada = horaEntrada;
         this.horaSaida = horaSaida;
         this.veiculo = veiculo;
-         this.vaga = vaga;
-         this.codMovimento = codMovimento;
+        this.vaga = vaga;
+        this.codMovimento = codMovimento;
     }
-     public Movimento(int codMovimento, Date horaEntrada, Veiculo veiculo, Vaga vaga) {
-        this.horaEntrada = horaEntrada;       
+
+    public Movimento(int codMovimento, Date horaEntrada, Veiculo veiculo, Vaga vaga) {
+        this.horaEntrada = horaEntrada;
         this.veiculo = veiculo;
-         this.vaga = vaga;
-         this.codMovimento = codMovimento;
+        this.vaga = vaga;
+        this.codMovimento = codMovimento;
     }
 
     public Movimento(Date horaEntrada, Date horaSaida, Veiculo veiculo, Vaga vaga, String observacao) {
@@ -74,8 +77,6 @@ public class Movimento {
         this.observacao = observacao;
     }
 
- 
-
     public String getObservacao() {
         return observacao;
     }
@@ -83,7 +84,7 @@ public class Movimento {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
-    
+
     public Vaga getVaga() {
         return vaga;
     }
@@ -98,30 +99,34 @@ public class Movimento {
     }
 
     public Date getHoraEntrada() {
-        
+
         return horaEntrada;
-        
+
     }
 
-    public Preco getPreco() {
-        return preco;
+    public double getValor() {
+        return valor;
     }
 
-    public void setPreco(Preco preco) {
-        this.preco = preco;
+    public String getValorFormatado() {
+        return nfc.format(valor);
     }
-    
-    
-     public String getFormatHoraEntrada() { 
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm"); 
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public String getFormatHoraEntrada() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
         if (horaEntrada != null) {
             return sdf.format(horaEntrada);
         } else {
             return "";
         }
     }
-     public String getFormatHoraSaida() { 
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm"); 
+
+    public String getFormatHoraSaida() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
         if (horaSaida != null) {
             return sdf.format(horaSaida);
         } else {
@@ -130,7 +135,7 @@ public class Movimento {
     }
 
     public void setHoraEntrada(Date horaEntrada) {
-        
+
         this.horaEntrada = horaEntrada;
     }
 
@@ -155,9 +160,4 @@ public class Movimento {
         return "Movimento{" + "horaEntrada=" + horaEntrada + ", horaSaida=" + horaSaida + ", veiculo=" + veiculo + '}';
     }
 
-   
-
-   
-    
-    
 }

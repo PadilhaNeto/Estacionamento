@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="paneLogin" prefHeight="403.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VIEW.LoginController">
+   <children>
+      <VBox layoutX="11.0" layoutY="5.0" prefHeight="403.0" prefWidth="372.0" style="-fx-background-color: #2f4f4f;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="74.0" prefWidth="351.0">
+               <children>
+                  <MaterialDesignIconView fill="WHITE" glyphName="SWAP_VERTICAL" size="35" />
+                  <Label text="Iniciar PdzPark" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="174.0" prefWidth="339.0" style="-fx-background-color: #2f4f4f;">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="186.0" prefWidth="180.0">
+                     <children>
+                        <JFXTextField fx:id="txtFldUser" alignment="CENTER" focusColor="WHITE" labelFloat="true" promptText="Username" style="-fx-background-color: white;" unFocusColor="DARKSLATEGRAY">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="txtFldSenha" focusColor="WHITE" labelFloat="true" promptText="Password" style="-fx-background-color: white;" unFocusColor="DARKSLATEGRAY">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="15.0" />
+                           </HBox.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </JFXPasswordField>
+                        <JFXSpinner fx:id="spnLogin" visible="false">
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </JFXSpinner>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="131.0" prefWidth="900.0">
+               <children>
+                  <JFXButton onAction="#btnLoginClick" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: white;" text="Login" textFill="DARKSLATEGRAY">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <graphic>
+                        <MaterialDesignIconView fill="DARKSLATEGRAY" glyphName="LOGIN" size="20" />
+                     </graphic>
+                     <padding>
+                        <Insets bottom="-5.0" top="-5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton onAction="#btnSairClick" style="-fx-background-color: white;" text="Exit" textFill="DARKSLATEGRAY">
+                     <font>
+                        <Font name="Arial Black" size="11.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

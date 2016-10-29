@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
@@ -129,8 +130,12 @@ public class PrincipalController implements Initializable {
             Image img = new Image(is);
             is.close();
             ImageView imgView = new ImageView(img);
-           imgView.setFitHeight(500);
+            DropShadow dropShadow = new DropShadow();
+           imgView.setFitHeight(510);
            imgView.setFitWidth(900);
+           
+           
+           imgView.setEffect(dropShadow);
           //  imgView.autosize();
             pane.getChildren().addAll(imgView);
             

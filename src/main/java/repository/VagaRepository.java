@@ -15,6 +15,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 
     public interface VagaRepository extends MongoRepository<Vaga, String> {
-        public List findByStatus(String status);
+        public List findByStatusLikeIgnoreCase(String status);
         
 }

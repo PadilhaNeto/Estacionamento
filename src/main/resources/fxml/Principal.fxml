@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import de.jensd.fx.glyphs.materialdesignicons.*?>
 <?import javafx.geometry.*?>
@@ -60,6 +61,9 @@
                </HBox.margin>
             </JFXSpinner>
          </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </HBox>
    </children>
 </AnchorPane>
